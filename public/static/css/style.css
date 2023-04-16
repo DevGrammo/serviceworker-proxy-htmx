@@ -1,0 +1,279 @@
+:root {
+    --sk-size: 40px;
+    --sk-color: #333;
+}
+
+body {
+    background-color: black;
+    color: gainsboro;
+    font-size: 1.25rem;
+    margin: 60px
+}
+
+section {
+    background-color: black;
+    color: white;
+    padding: 8px;
+    position: relative;
+}
+
+.call-to-action {
+    display: flex;
+    gap: 10px;
+    align-items: center
+}
+
+button {
+    background-color: white;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    height: max-content;
+    border-radius: 100vmax;
+    font-family: 'Courier New', Courier, monospace;
+    border: 0;
+    transition: all 0.3s ease;
+    ;
+    cursor: pointer;
+}
+
+button:hover {
+    filter: drop-shadow(0px 0px 5px white);
+    font-weight: bolder;
+}
+
+.removable-ping {
+    color: rgba(159, 204, 159, 0.903);
+    font-family: 'Courier New', Courier, monospace;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    position: relative;
+}
+
+.removable-ping:hover {
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.205);
+    cursor: pointer;
+
+}
+
+.removable-ping:hover::after {
+    content: ' X ';
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    ;
+    color: red;
+}
+
+.close {
+    position: relative;
+    background-color: transparent;
+    top: -10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-menu {
+    cursor: pointer;
+    background-color: transparent;
+}
+
+g.close-symbol {
+    stroke: red;
+    stroke-width: 5px;
+
+}
+
+section.person {
+    position: unset
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.displayPerson {
+    display: block;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.3s;
+    opacity: 1;
+}
+
+#person {
+    position: absolute;
+    top: 10vh;
+    right: 5vw;
+    transition: all 0.5s ease;
+    width: 500px;
+    
+    
+    background-color:white;
+    opacity: 1;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 1vmax;
+}
+
+#person-summary::-webkit-scrollbar {
+    width: 0.2em;
+  
+}
+
+#person-summary::-webkit-scrollbar-thumb {
+    background-color: rgb(145, 67, 67);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#person-summary {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 1s ease;
+    background-color: black;
+    padding: 15px;
+    overflow-y: scroll;
+    height: 60vh;
+
+}
+
+#person-summary p {
+    width: 100%;
+}
+
+#person-summary .links {
+    width: 100%;
+    padding: 0;
+}
+
+#person-summary blockquote {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#person-summary img {
+    border-radius: 50%;
+    width: 100px;
+    text-align: center;
+
+}
+
+
+
+
+.my-indicator {
+    display: none;
+}
+
+.wealth-indicator {
+    visibility: hidden;
+    top: 2.7rem;
+    right: 4rem;
+    fill: aquamarine;
+    align-self: center;
+}
+
+.htmx-request .wealth-indicator {
+    visibility: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.htmx-request.wealth-indicator {
+    visibility: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.htmx-request .my-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%
+}
+
+.htmx-request.my-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: max(50%, 40vh)
+}
+
+.my-indicator>svg {
+    height: 100px;
+    width: 100px;
+    display: flex;
+}
+
+.zen-indicator {
+    display: none;
+    fill: antiquewhite;
+}
+
+
+.htmx-request .zen-indicator {
+
+    display: inline-flex;
+}
+
+.htmx-request.zen-indicator {
+    display: inline-flex;
+
+}
+
+
+
+
+.fade-in {
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+section.chart > .box {
+    height: 300px;
+    display: flex;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+section.chart > .box > div.left {
+    color: pink;
+}
+
+section.chart > .box > div.right {
+    width: 100%;
+    background-color: blueviolet;
+}

@@ -1,0 +1,13 @@
+def waitAndReturn()
+    wait 2s
+    return "I waited..."
+end
+
+
+def testPerson()
+    get #A 
+    then call it.click()
+    then get #person then set ELEMENT to result
+    then call ELEMENT.className.includes("displayPersond")
+    then if result is false throw `Test failed, classes are: ${ELEMENT.className}` else log "success!" 
+  end

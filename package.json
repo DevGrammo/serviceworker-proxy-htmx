@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "browser-level": "^1.0.1",
+    "htmx.org": "^1.8.6"
+  },
+  "devDependencies": {
+    "shadow-cljs": "^2.22.1"
+  }
+}
