@@ -1,0 +1,3 @@
+(function(){
+'use strict';(function(){function a(){return document.head.querySelector("[name\x3dservice-worker][content]").content}console.debug("install.core: CLIENT INSTALLING SERVICE WORKER:",a());window.navigator.serviceWorker.addEventListener("controllerchange",function(){var b=localStorage.getItem("registration");console.debug("registration-completed:",b);if($APP.v(b))return null;localStorage.setItem("registration",!0);return location.reload()});return navigator.serviceWorker.register(a())})();
+}).call(this);
